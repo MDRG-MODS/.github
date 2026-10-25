@@ -1,0 +1,51 @@
+name: "Submit or Update a Mod"
+description: "Submit a new mod to be archived in the organization or request an update"
+title: "[Mod Submission]: "
+labels: ["mod-submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to suggest a new mod for archival or notify us of a newer version.
+
+  - type: input
+    id: mod_name
+    attributes:
+      label: Mod Name
+      placeholder: "e.g. Cyberpunk Outfit"
+    validations:
+      required: true
+
+  - type: input
+    id: author
+    attributes:
+      label: Original Author & Discord Handle
+      placeholder: "e.g. AuthorName (Discord: author#0000 / ID: 123456789)"
+    validations:
+      required: true
+
+  - type: input
+    id: target_version
+    attributes:
+      label: Target MDRG Game Version
+      placeholder: "e.g. v0.97.12"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Mod Description & Download Link
+      description: Provide details about what the mod does and a link to the archive (Google Drive, Mega, Discord link, etc.).
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: compliance
+    attributes:
+      label: Compliance Verification
+      options:
+        - label: "I confirm this mod does not contain prohibited sexually explicit pornographic images or video."
+          required: true
+        - label: "I confirm the original author credits are accurately provided."
+          required: true

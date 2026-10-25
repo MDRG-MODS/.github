@@ -1,0 +1,50 @@
+name: "Request Organization Membership"
+description: "Request an invite to join the MDRG-MODS GitHub organization"
+title: "[Membership Request]: "
+labels: ["membership", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for your interest in joining the **MDRG-MODS** organization!
+        Please fill in the details below so an administrator can send you an invitation.
+
+  - type: input
+    id: github_username
+    attributes:
+      label: GitHub Username
+      description: Your exact GitHub account username.
+      placeholder: "e.g. octocat"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: role
+    attributes:
+      label: Primary Role / Interest
+      description: How are you planning to contribute?
+      options:
+        - Mod Creator (I want to publish/maintain my own mods)
+        - Mod Tester / Compatibility Verifier
+        - Translator (Adding language localizations)
+        - Organization Contributor / Documentation
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Details / Projects
+      description: Tell us which mod(s) you work on or what you'd like to help with (links to previous work or Discord handle are welcome).
+      placeholder: "I created/maintain ... or I want to help test mods for version v0.97.12"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Agreement
+      options:
+        - label: "I agree to keep mods compatible with GitHub's Terms of Service (no explicit pornographic imagery/videos, respect original authors)."
+          required: true
